@@ -81,7 +81,7 @@ function removeTextElements() {
  * on top of the image.
  * @param {HTMLElement} imgNode Which image node to write content on.
  * @param {string} textContent What text to write on the image.
- */
+
 function addTextElementToImageNode(imgNode, textContent) {
   const originalParent = imgNode.parentElement;
   const container = document.createElement("div");
@@ -110,6 +110,7 @@ function addTextElementToImageNode(imgNode, textContent) {
   container.appendChild(text);
   text.textContent = textContent;
 }
+*/
 
 // Add a listener to hear from the content.js page when the image is through
 // processing.  The message should contin an action, a url, and predictions (the
@@ -130,6 +131,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       addTextElementToImageNode(imgNode, textContent);
     }
   }
+  console.log(textContent);
 });
 
 // Set up a listener to remove all annotations if the user clicks
